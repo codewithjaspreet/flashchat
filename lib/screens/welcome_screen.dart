@@ -9,6 +9,28 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  // late AnimationController controller;
+  // late Animation animation;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //
+  //   controller = AnimationController(
+  //     duration: Duration(seconds: 1),
+  //     vsync: this,
+  //   );
+  //   // animation = CurvedAnimation(parent: controller, curve: Curves.decelerate);
+  //   // animation = ColorTween(begin: Colors.blueGrey, end: Colors.white)
+  //   //     .animate(controller) as AnimationController;
+  //
+  //   controller.forward();
+  //
+  //   controller.addListener(() {
+  //     setState(() {});
+  //     print(animation.value);
+  //   });
+  // }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,13 +43,17 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
           children: <Widget>[
             Row(
               children: <Widget>[
-                Container(
-                  child: Image.asset('images/logo.png'),
-                  height: 60.0,
+                Hero(
+                  tag: 'logo',
+                  child: Container(
+                    child: Image.asset('images/logo.png'),
+                    height: 60.0,
+                  ),
                 ),
                 Text(
-                  'Flash Chat',
+                  'FLASH CHAT',
                   style: TextStyle(
+                    color: Colors.black,
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
                   ),
